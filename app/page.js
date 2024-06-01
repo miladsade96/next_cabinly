@@ -1,3 +1,3 @@
 export default function Page() {
-  return "Hello Next Cabinly";
+  return <h1>Welcome to Cabinly</h1>;
 }
