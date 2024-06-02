@@ -1,6 +1,3 @@
-import Link from "next/link";
-import Navigation from "@/app/components/Navigation";
-
 export default function Page() {
   return (
     <div>
