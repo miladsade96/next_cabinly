@@ -1,3 +1,10 @@
+import Link from "next/link";
+
 export default function Page() {
-  return <h1>Welcome to Cabinly</h1>;
+  return (
+    <div>
+      <h1>Welcome to Cabinly</h1>
+      <Link href="/cabins">Explore Luxury Cabins</Link>
+    </div>
+  );
 }
