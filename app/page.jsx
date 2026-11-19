@@ -1,0 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
+export default function Page() {
+ return <><section className="hero container"><div className="hero-copy"><p className="eyebrow">A little closer to nature</p><h1>Less rush.<br />More room<br /><em>to breathe.</em></h1><p>Explore cabins made for quiet mornings, shared meals, and a slower pace. Find a space that feels like your kind of escape.</p><Link className="button" href="/cabins">Explore the cabins</Link></div><div className="hero-image"><Image src="/images/cabin-001.jpg" alt="A cabin retreat with warm wooden interiors" fill preload sizes="(max-width: 760px) 100vw, 55vw" /><span className="image-caption">A different kind of everyday.</span></div></section><section className="container introduction"><p className="eyebrow">Make space for the simple things</p><h2>A place to switch off.<br />A reason to stay a little longer.</h2><div><p>From a cosy escape for two to a cabin with room for everyone, discover the collection at your own pace.</p><Link className="text-link" href="/about">Get to know Cabinly</Link></div></section></>;
+}

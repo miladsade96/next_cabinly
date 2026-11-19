@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Cabinly guest website
 
-## Getting Started
+A Next.js App Router prototype for a cabin-stay website. It has a responsive home page, a sample cabin catalog with capacity filters, an about page, an account-status page and a custom not-found page.
 
-First, run the development server:
+The catalog is local sample data in `app/data/cabins.js`. The four photos were reused from the existing Cabinly repository. This project currently has no authentication, live availability, reservations or payments. The interface labels that limitation and does not collect account credentials.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Run locally
+
+Use Node 22.14 or newer (Node 22 is recorded in `.nvmrc`). No service keys are required.
+
+```sh
+npm ci
+npm run dev -- --hostname 127.0.0.1 --port 4182
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+For the production server:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```sh
+npm run build
+npm start -- --hostname 127.0.0.1 --port 4182
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Open http://127.0.0.1:4182. Routes: `/`, `/cabins`, `/about`, `/account`.
 
-## Learn More
+## Verification
 
-To learn more about Next.js, take a look at the following resources:
+```sh
+npm test
+npm run lint
+npm run build
+npm audit
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+On 2026-11-19: 3 automated tests passed, lint and production build passed, and npm audit reported 0 vulnerabilities in the installed dependency tree. Browser checks covered navigation, capacity filtering, about/account routes and 390px mobile layouts. The preview showed no broken images or browser console errors. Screenshots are in the local, ignored `qa` folder.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Hosting and future integration
 
-## Deploy on Vercel
+Deploy through a host with Next.js runtime support, using `npm run build`. Do not set the publish directory to the source tree or treat `.next` as a generic static website. A plain static export would require an explicit export configuration and a compatible image strategy.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Before enabling booking or accounts, add server-side authentication, validated reservation endpoints, real availability and persistence. The separate Cabinly admin project has its own staff access model; this guest prototype does not share that service automatically.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Changes are on `codex/fix-next-cabinly`. No deployment was performed.

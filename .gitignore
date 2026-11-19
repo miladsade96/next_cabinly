@@ -40,3 +40,9 @@ next-env.d.ts
 /.idea/next_cabinly.iml
 /.idea/prettier.xml
 /.idea/vcs.xml
+
+*.log
+/audit-*.json
+/qa/
+/coverage/
+.env*.local
