@@ -1,0 +1,4 @@
+import Image from "next/image";
+import Link from "next/link";
+export const metadata = { title: "About Cabinly" };
+export default function Page() { return <section className="container page-section about-grid"><div><p className="eyebrow">Room for what matters</p><h1 className="page-title">A slower pace.<br />A warmer welcome.</h1><p className="page-intro">Cabinly is a cabin-stay website concept built around a simple idea: time away should feel easy.</p><p>Explore the sample cabins, compare spaces for your group, and get a feel for the collection. This preview introduces the experience; live reservations and guest accounts are not connected yet.</p><Link className="button" href="/cabins">Explore the cabins</Link></div><div className="about-image"><Image src="/images/cabin-002.jpg" alt="A comfortable cabin living space" fill sizes="(max-width: 760px) 100vw, 45vw" /></div></section>; }
